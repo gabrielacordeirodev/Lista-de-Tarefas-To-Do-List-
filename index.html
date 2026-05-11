@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <div class="header-top">
+        <span class="header-label">hoje</span>
+        <span class="counter" id="counter">0 tarefas</span>
+      </div>
+      <h1 class="title">Minhas<br>Tarefas</h1>
+    </header>
+
+    <div class="input-area">
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="Adicionar nova tarefa..."
+        maxlength="80"
+      />
+      <button class="add-btn" id="addBtn" onclick="addTask()">
+        <span class="plus">+</span>
+      </button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="setFilter('all', this)">Todas</button>
+      <button class="filter-btn" onclick="setFilter('pending', this)">Pendentes</button>
+      <button class="filter-btn" onclick="setFilter('done', this)">Concluídas</button>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">✦</div>
+      <p>Nenhuma tarefa aqui.<br>Adicione uma acima!</p>
+    </div>
+
+    <footer class="footer" id="footer" style="display:none">
+      <button class="clear-btn" onclick="clearDone()">Limpar concluídas</button>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
